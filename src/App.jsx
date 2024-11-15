@@ -42,7 +42,7 @@ const App = () => {
       if (newTrack.error) {
         throw new Error(newTrack.error)
       }
-      setPetList([newTrack, ...trackList])
+      setTrackList([newTrack, ...trackList])
       setIsFormOpen(false)
     } catch (error) {
       console.log(error)
@@ -86,7 +86,7 @@ const App = () => {
 
   return (
     <>
-    <TrackList trackList={trackList} updateSelected={updateSelected}   handleFormView={handleFormView} isFormOpen={isFormOpen} />
+    <TrackList trackList={trackList} updateSelected={updateSelected} handleRemoveTrack={handleRemoveTrack} handleFormView={handleFormView} isFormOpen={isFormOpen} />
     {isFormOpen ? (
       <TrackForm selected={selected} handleAddTrack={handleAddTrack} handleUpdateTrack={handleUpdateTrack}/>
     ) : (

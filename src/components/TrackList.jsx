@@ -1,6 +1,6 @@
 const TrackList = (props) => {
     const tracks = props.trackList.map((track) => ( <a key={track._id} onClick={() => props.updateSelected(track)}>
-        <li>{track.title} <button>Play</button></li>
+        <li>{track.title} <button>Play</button> <button onClick={() => props.handleRemoveTrack(track._id)}>Delete</button></li>
     </a>))
 
     return(
